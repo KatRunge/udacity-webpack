@@ -1,6 +1,7 @@
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
+require('dotenv').config()
 
 const app = express()
 
