@@ -3,6 +3,9 @@ const express = require("express");
 const mockAPIResponse = require("./mockAPI.js");
 require("dotenv").config();
 
+const fetch = require("node-fetch");
+// import fetch from "node-fetch";
+
 const baseURL = "https://api.meaningcloud.com/sentiment-2.1";
 const apiKey = process.env.API_KEY;
 
@@ -37,17 +40,17 @@ app.post("/testApi", async (req, res) => {
   const url = await fetch(
     `${baseURL}?key=${apiKey}&url=${inputUrl}&lang=auto&of=json`
   );
-  console.log(inputUrl);
-  try {
-    const data = await url.json();
-    return {
-      score_tag: data.score_tag,
-      agreement: data.agreement,
-      subjectivity: data.subjectivity,
-      confidence: data.confidence,
-    };
-  } catch (error) {
-    console.log("error", error);
-  }
-  res.send(data);
+  console.log(url);
+  // try {
+  //   const data = await url.json();
+  //   return {
+  //     score_tag: data.score_tag,
+  //     agreement: data.agreement,
+  //     subjectivity: data.subjectivity,
+  //     confidence: data.confidence,
+  //   };
+  // } catch (error) {
+  //   console.log("error", error);
+  // }
+  res.send("data");
 });
