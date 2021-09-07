@@ -2,7 +2,6 @@ var path = require("path");
 const express = require("express");
 const mockAPIResponse = require("./mockAPI.js");
 require("dotenv").config();
-
 const fetch = require("node-fetch");
 // import fetch from "node-fetch";
 
@@ -35,22 +34,21 @@ app.get("/test", function (req, res) {
   res.json(mockAPIResponse);
 });
 
-app.post("/testApi", async (req, res) => {
+app.post("/results", async function (req, res) {
   const inputUrl = req.body.inputUrl;
-  const url = await fetch(
+  const mainUrl = await fetch(
     `${baseURL}?key=${apiKey}&url=${inputUrl}&lang=auto&of=json`
   );
-  console.log(url);
-  // try {
-  //   const data = await url.json();
-  //   return {
-  //     score_tag: data.score_tag,
-  //     agreement: data.agreement,
-  //     subjectivity: data.subjectivity,
-  //     confidence: data.confidence,
-  //   };
-  // } catch (error) {
-  //   console.log("error", error);
-  // }
-  res.send("data");
+  try {
+    const data = await mainUrl.json();
+    console.log(data.subjectivity);
+    res.send("data");
+    return {
+      agreement: data.agreement,
+      subjectivity: data.subjectivity,
+      confidence: data.confidence,
+    };
+  } catch (error) {
+    console.log("error", error);
+  }
 });
