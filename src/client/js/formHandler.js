@@ -9,7 +9,7 @@ function handleSubmit(event) {
     method: "POST",
     credentials: "same-origin",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(inputUrl),
+    body: JSON.stringify({ inputUrl }),
   })
     .then((res) => res.json())
     .then(function (res) {
@@ -22,7 +22,7 @@ function handleSubmit(event) {
         console.log("error", error);
       }
     });
-  console.log('öasldkfj aösldkjf ', inputUrl);
+  console.log("öasldkfj aösldkjf ", inputUrl);
   console.log("::: Form Submitted :::");
 }
 
