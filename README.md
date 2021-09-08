@@ -4,12 +4,12 @@
 
 The goal of this project is to practice with
 
-Setting up Webpack
-Sass styles
-Webpack Loaders and Plugins
-Creating layouts and page design
-Service workers
-Using APIs and creating requests to external URLs
+1- Setting up Webpack
+2- Sass styles
+3- Webpack Loaders and Plugins
+4- Creating layouts and page design
+5- Service workers
+6- Using APIs and creating requests to external URLs
 
 ## Instructions
 
