@@ -8,7 +8,6 @@ const fetch = require("node-fetch");
 const baseURL = "https://api.meaningcloud.com/sentiment-2.1";
 const apiKey = process.env.API_KEY;
 
-// console.log(apiUrl);
 
 const app = express();
 
@@ -34,6 +33,7 @@ app.get("/test", function (req, res) {
   res.json(mockAPIResponse);
 });
 
+// post request
 app.post("/results", async function (req, res) {
   const inputUrl = req.body.inputUrl;
   const mainUrl = await fetch(
@@ -42,7 +42,8 @@ app.post("/results", async function (req, res) {
   try {
     const data = await mainUrl.json();
     console.log(data.subjectivity);
-    res.send("data");
+    res.send(data);
+    // data to be returned in "results"
     return {
       agreement: data.agreement,
       subjectivity: data.subjectivity,
@@ -52,5 +53,3 @@ app.post("/results", async function (req, res) {
     console.log("error", error);
   }
 });
-
-

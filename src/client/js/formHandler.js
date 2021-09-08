@@ -24,7 +24,7 @@ function handleSubmit(event) {
       }
     });
 
-  console.log("öasldkfj aösldkjf ", inputUrl);
+  console.log("this is the url", inputUrl);
   console.log("::: Form Submitted :::");
 }
 
