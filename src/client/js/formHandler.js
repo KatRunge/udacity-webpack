@@ -4,7 +4,11 @@ function handleSubmit(event) {
   // check what text was put into the form field
   let inputUrl = document.getElementById("input").value;
 
-  !inputUrl ? alert('Please enter a valid URL') : console.log("::: Form Submitted :::");
+  if (Client.checkForUrl(inputUrl)) {
+    console.log("::: Form Submitted :::");
+  } else {
+    alert("error validate url");
+  }
 
   fetch("http://localhost:8081/results", {
     method: "POST",
@@ -23,9 +27,6 @@ function handleSubmit(event) {
         console.log("error", error);
       }
     });
-
-  console.log("this is the url", inputUrl);
-  console.log("::: Form Submitted :::");
 }
 
 export { handleSubmit };

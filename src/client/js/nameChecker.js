@@ -1,10 +1,13 @@
-function checkForName(inputUrl) {
-  console.log("::: Running checkForName :::", inputUrl);
-  let names = ["Picard", "Janeway", "Kirk", "Archer", "Georgiou"];
-
-  if (names.includes(inputUrl)) {
-    alert("Welcome, Captain!");
-  }
+function checkForUrl(inputUrl) {
+  const urlCheck =
+    /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+  return urlCheck.test(inputUrl);
 }
 
-export { checkForName };
+export { checkForUrl };
+
+// sources used for creating this function:
+//
+// https://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-a-url
+// https://reactgo.com/javascript-check-string-url/
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp

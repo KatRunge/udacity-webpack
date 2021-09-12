@@ -1,6 +1,6 @@
 
-import { checkForName } from '../src/client/js/nameChecker';
+import { checkForUrl } from '../src/client/js/nameChecker';
 
-test("Check function checkForName", () => {
-  expect(checkForName).toBeTruthy();
+test("Check function checkForUrl", () => {
+  expect(checkForUrl).toBeTruthy();
 });
