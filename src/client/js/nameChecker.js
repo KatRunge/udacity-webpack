@@ -9,5 +9,4 @@ export { checkForUrl };
 // sources used for creating this function:
 //
 // https://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-a-url
-// https://reactgo.com/javascript-check-string-url/
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
