@@ -4,7 +4,7 @@ function handleSubmit(event) {
   // check what text was put into the form field
   let inputUrl = document.getElementById("input").value;
 
-  Client.checkForName(inputUrl);
+  !inputUrl ? alert('Please enter a valid URL') : console.log("::: Form Submitted :::");
 
   fetch("http://localhost:8081/results", {
     method: "POST",
